@@ -10,6 +10,8 @@ import { VisionComponent } from './page/vision/vision.component';
 import { ViewVisionComponent } from './view/vision/vision.component';
 import { BusinessComponent } from './page/business/business.component';
 import { ViewBusinessComponent } from './view/business/business.component';
+import { TechnologyComponent } from './page/technology/technology.component';
+import { ViewTechnologyComponent } from './view/technology/technology.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { ViewBusinessComponent } from './view/business/business.component';
     ViewVisionComponent,
     BusinessComponent,
     ViewBusinessComponent,
+    TechnologyComponent,
+    ViewTechnologyComponent,
   ],
   imports: [
     BrowserModule,
