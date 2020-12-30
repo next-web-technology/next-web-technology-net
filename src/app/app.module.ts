@@ -8,6 +8,8 @@ import { HomeComponent } from './page/home/home.component';
 import { ViewHomeComponent } from './view/home/home.component';
 import { VisionComponent } from './page/vision/vision.component';
 import { ViewVisionComponent } from './view/vision/vision.component';
+import { BusinessComponent } from './page/business/business.component';
+import { ViewBusinessComponent } from './view/business/business.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { ViewVisionComponent } from './view/vision/vision.component';
     ViewHomeComponent,
     VisionComponent,
     ViewVisionComponent,
+    BusinessComponent,
+    ViewBusinessComponent,
   ],
   imports: [
     BrowserModule,
