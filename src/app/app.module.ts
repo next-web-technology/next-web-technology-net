@@ -12,6 +12,8 @@ import { BusinessComponent } from './page/business/business.component';
 import { ViewBusinessComponent } from './view/business/business.component';
 import { TechnologyComponent } from './page/technology/technology.component';
 import { ViewTechnologyComponent } from './view/technology/technology.component';
+import { MembersComponent } from './page/members/members.component';
+import { ViewMembersComponent } from './view/members/members.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { ViewTechnologyComponent } from './view/technology/technology.component'
     ViewBusinessComponent,
     TechnologyComponent,
     ViewTechnologyComponent,
+    MembersComponent,
+    ViewMembersComponent,
   ],
   imports: [
     BrowserModule,
