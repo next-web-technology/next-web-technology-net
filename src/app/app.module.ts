@@ -16,6 +16,8 @@ import { MembersComponent } from './page/members/members.component';
 import { ViewMembersComponent } from './view/members/members.component';
 import { LinksComponent } from './page/links/links.component';
 import { ViewLinksComponent } from './view/links/links.component';
+import { ContactComponent } from './page/contact/contact.component';
+import { ViewContactComponent } from './view/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { ViewLinksComponent } from './view/links/links.component';
     ViewMembersComponent,
     LinksComponent,
     ViewLinksComponent,
+    ContactComponent,
+    ViewContactComponent,
   ],
   imports: [
     BrowserModule,
