@@ -1,5 +1,9 @@
 # NextWebTechnologyNet
 
+[![Angular CI](https://github.com/next-web-technology/next-web-technology-net/workflows/Angular%20CI/badge.svg)](https://github.com/next-web-technology/next-web-technology-net/actions?query=workflow%3A%22Angular+CI%22)
+[![Functions CI](https://github.com/next-web-technology/next-web-technology-net/workflows/Functions%20CI/badge.svg)](https://github.com/next-web-technology/next-web-technology-net/actions?query=workflow%3A%22Functions+CI%22)
+[![Firebase CD](https://github.com/next-web-technology/next-web-technology-net/workflows/Firebase%20CD/badge.svg)](https://github.com/next-web-technology/next-web-technology-net/actions?query=workflow%3A%22Firebase+CD%22)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
 
 ## Development server
