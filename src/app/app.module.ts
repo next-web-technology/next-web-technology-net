@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ViewHeaderComponent } from './view/common/header/header.component';
+import { ViewFooterComponent } from './view/common/footer/footer.component';
 import { HomeComponent } from './page/home/home.component';
 import { ViewHomeComponent } from './view/home/home.component';
 import { VisionComponent } from './page/vision/vision.component';
@@ -18,11 +20,12 @@ import { LinksComponent } from './page/links/links.component';
 import { ViewLinksComponent } from './view/links/links.component';
 import { ContactComponent } from './page/contact/contact.component';
 import { ViewContactComponent } from './view/contact/contact.component';
-import { ViewHeaderComponent } from './view/common/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ViewHeaderComponent,
+    ViewFooterComponent,
     HomeComponent,
     ViewHomeComponent,
     VisionComponent,
@@ -37,7 +40,6 @@ import { ViewHeaderComponent } from './view/common/header/header.component';
     ViewLinksComponent,
     ContactComponent,
     ViewContactComponent,
-    ViewHeaderComponent,
   ],
   imports: [
     BrowserModule,
