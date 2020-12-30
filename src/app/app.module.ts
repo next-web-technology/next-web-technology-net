@@ -14,6 +14,8 @@ import { TechnologyComponent } from './page/technology/technology.component';
 import { ViewTechnologyComponent } from './view/technology/technology.component';
 import { MembersComponent } from './page/members/members.component';
 import { ViewMembersComponent } from './view/members/members.component';
+import { LinksComponent } from './page/links/links.component';
+import { ViewLinksComponent } from './view/links/links.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { ViewMembersComponent } from './view/members/members.component';
     ViewTechnologyComponent,
     MembersComponent,
     ViewMembersComponent,
+    LinksComponent,
+    ViewLinksComponent,
   ],
   imports: [
     BrowserModule,
