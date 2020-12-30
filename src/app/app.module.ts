@@ -18,6 +18,7 @@ import { LinksComponent } from './page/links/links.component';
 import { ViewLinksComponent } from './view/links/links.component';
 import { ContactComponent } from './page/contact/contact.component';
 import { ViewContactComponent } from './view/contact/contact.component';
+import { ViewHeaderComponent } from './view/common/header/header.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ViewContactComponent } from './view/contact/contact.component';
     ViewLinksComponent,
     ContactComponent,
     ViewContactComponent,
+    ViewHeaderComponent,
   ],
   imports: [
     BrowserModule,
