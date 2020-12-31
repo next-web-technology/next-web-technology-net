@@ -1,0 +1,6 @@
+<div fxLayout="row wrap">
+  <button mat-button *ngFor="let sns of snss" (click)="goToLink(sns.url)">
+    <fa-icon [icon]="sns.icon"></fa-icon>
+    <span>{{sns.name}}</span>
+  </button>
+</div>
