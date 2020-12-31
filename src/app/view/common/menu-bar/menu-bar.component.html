@@ -1,0 +1,6 @@
+<div fxLayout="row wrap">
+  <button mat-button *ngFor="let menu of menus" routerLink={{menu.path}}>
+    <mat-icon aria-hidden="true">{{menu.icon}}</mat-icon>
+    <span>{{menu.name}}</span>
+  </button>
+</div>

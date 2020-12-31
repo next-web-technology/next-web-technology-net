@@ -4,8 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+
 import { ViewHeaderComponent } from './view/common/header/header.component';
 import { ViewFooterComponent } from './view/common/footer/footer.component';
+import { ViewMenuBarComponent } from './view/common/menu-bar/menu-bar.component';
+import { ViewLogoImageComponent } from './view/common/logo-image/logo-image.component';
 import { HomeComponent } from './page/home/home.component';
 import { ViewHomeComponent } from './view/home/home.component';
 import { VisionComponent } from './page/vision/vision.component';
@@ -26,6 +34,8 @@ import { ViewContactComponent } from './view/contact/contact.component';
     AppComponent,
     ViewHeaderComponent,
     ViewFooterComponent,
+    ViewLogoImageComponent,
+    ViewMenuBarComponent,
     HomeComponent,
     ViewHomeComponent,
     VisionComponent,
@@ -44,7 +54,11 @@ import { ViewContactComponent } from './view/contact/contact.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FlexLayoutModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
