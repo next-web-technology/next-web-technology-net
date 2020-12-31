@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ViewCopyrightComponent } from './copyright.component';
 
-describe('CopyrightComponent', () => {
+describe('ViewCopyrightComponent', () => {
   let component: ViewCopyrightComponent;
   let fixture: ComponentFixture<ViewCopyrightComponent>;
 
