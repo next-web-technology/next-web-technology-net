@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MENUS } from 'src/app/domain/menu/menus';
+
+import { MENUS } from '../../../domain/menu/menus';
 
 @Component({
   selector: 'view-menu-bar',
