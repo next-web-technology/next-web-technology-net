@@ -1,11 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DebugElement } from '@angular/core';
 
 import { ViewLogoImageComponent } from './logo-image.component';
 
 describe('ViewLogoImageComponent', () => {
   let component: ViewLogoImageComponent;
   let fixture: ComponentFixture<ViewLogoImageComponent>;
-  let compiled: any;
+  let compiled: DebugElement['nativeElement'];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

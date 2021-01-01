@@ -1,11 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DebugElement } from '@angular/core';
 
 import { ViewCopyrightComponent } from './copyright.component';
 
 describe('ViewCopyrightComponent', () => {
   let component: ViewCopyrightComponent;
   let fixture: ComponentFixture<ViewCopyrightComponent>;
-  let compiled: any;
+  let compiled: DebugElement['nativeElement'];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({

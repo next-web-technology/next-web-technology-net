@@ -1,11 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { DebugElement } from '@angular/core';
 
 import { ViewHeaderComponent } from './header.component';
 
 describe('ViewHeaderComponent', () => {
   let component: ViewHeaderComponent;
   let fixture: ComponentFixture<ViewHeaderComponent>;
-  let compiled: any;
+  let compiled: DebugElement['nativeElement'];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
