@@ -10,9 +10,8 @@ describe('ViewLogoImageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewLogoImageComponent ]
-    })
-    .compileComponents();
+      declarations: [ViewLogoImageComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -26,11 +25,15 @@ describe('ViewLogoImageComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('img src should be matched to /\/assets\/logo-transparent.png$/', () => {
-    expect(compiled.querySelector('img').src).toMatch(/\/assets\/logo-transparent.png$/);
+  it('img src should be matched to //assets/logo-transparent.png$/', () => {
+    expect(compiled.querySelector('img').src).toMatch(
+      /\/assets\/logo-transparent.png$/,
+    );
   });
 
-  it('img alt should be Next Web Technology LLC\'s logo image', () => {
-    expect(compiled.querySelector('img').alt).toMatch('Next Web Technology LLC\'s logo image');
+  it("img alt should be Next Web Technology LLC's logo image", () => {
+    expect(compiled.querySelector('img').alt).toMatch(
+      "Next Web Technology LLC's logo image",
+    );
   });
 });

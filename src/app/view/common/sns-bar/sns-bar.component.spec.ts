@@ -12,9 +12,8 @@ describe('ViewSnsBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewSnsBarComponent ]
-    })
-    .compileComponents();
+      declarations: [ViewSnsBarComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -30,18 +29,18 @@ describe('ViewSnsBarComponent', () => {
   });
 
   it('component.snss should be snss in ../../../domain/sns/snss', () => {
-    expect(component.snss).toBe(SNSS)
-  })
+    expect(component.snss).toBe(SNSS);
+  });
 
   it('button counts should be component.snss.length', () => {
-    const buttonsCounts = buttons.length
-    expect(buttonsCounts).toBe(component.snss.length)
-  })
+    const buttonsCounts = buttons.length;
+    expect(buttonsCounts).toBe(component.snss.length);
+  });
 
   it('button span textContent should be sns of component.snss sns.name', () => {
     buttons.forEach((button, index) => {
-      const span = button.querySelector('span')
-      expect(span.textContent).toBe(component.snss[index].name)
+      const span = button.querySelector('span');
+      expect(span.textContent).toBe(component.snss[index].name);
     });
-  })
+  });
 });

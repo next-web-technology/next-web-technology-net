@@ -10,9 +10,8 @@ describe('ViewCopyrightComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewCopyrightComponent ]
-    })
-    .compileComponents();
+      declarations: [ViewCopyrightComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -27,6 +26,8 @@ describe('ViewCopyrightComponent', () => {
   });
 
   it('div textContent should be Copyright © 2021 Next Web Technology, LLC. All Rights Reserved', () => {
-    expect(compiled.querySelector('div').textContent).toBe('Copyright © 2021 Next Web Technology, LLC. All Rights Reserved');
+    expect(compiled.querySelector('div').textContent).toBe(
+      'Copyright © 2021 Next Web Technology, LLC. All Rights Reserved',
+    );
   });
 });

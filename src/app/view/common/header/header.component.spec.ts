@@ -10,9 +10,8 @@ describe('ViewHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewHeaderComponent ]
-    })
-    .compileComponents();
+      declarations: [ViewHeaderComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -27,6 +26,8 @@ describe('ViewHeaderComponent', () => {
   });
 
   it('h1 textContent should be Next Web Technology合同会社', () => {
-    expect(compiled.querySelector('h1').textContent).toBe('Next Web Technology合同会社');
+    expect(compiled.querySelector('h1').textContent).toBe(
+      'Next Web Technology合同会社',
+    );
   });
 });

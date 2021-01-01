@@ -5,18 +5,16 @@ import { SNSS } from '../../../domain/sns/snss';
 @Component({
   selector: 'view-sns-bar',
   templateUrl: './sns-bar.component.html',
-  styleUrls: ['./sns-bar.component.css']
+  styleUrls: ['./sns-bar.component.css'],
 })
 export class ViewSnsBarComponent implements OnInit {
-  snss = SNSS
+  snss = SNSS;
 
   goToLink(url: string): void {
-    window.open(url, "_blank")
+    window.open(url, '_blank');
   }
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

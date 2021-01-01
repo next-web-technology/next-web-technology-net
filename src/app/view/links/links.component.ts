@@ -3,13 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'view-links',
   templateUrl: './links.component.html',
-  styleUrls: ['./links.component.css']
+  styleUrls: ['./links.component.css'],
 })
 export class ViewLinksComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -6,18 +6,18 @@ import { Sns } from './sns.model';
 
 export const SNSS: Sns[] = [
   {
-    url: "https://twitter.com/NextWebTechLLC",
+    url: 'https://twitter.com/NextWebTechLLC',
     icon: faTwitter,
-    name: "Twitter",
+    name: 'Twitter',
   },
   {
-    url: "https://github.com/next-web-technology",
+    url: 'https://github.com/next-web-technology',
     icon: faGithub,
-    name: "GitHub",
+    name: 'GitHub',
   },
   {
-    url: "https://join.slack.com/t/next-web-technology/signup",
+    url: 'https://join.slack.com/t/next-web-technology/signup',
     icon: faSlack,
-    name: "Join Slack",
-  }
-]
+    name: 'Join Slack',
+  },
+];
