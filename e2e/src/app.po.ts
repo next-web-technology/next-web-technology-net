@@ -14,14 +14,32 @@ export class AppPage {
   }
 
   getHeaderMenuButton(index: number): ElementFinder {
-    return element(by.xpath(`/html/body/app-root/div/view-header/header/div/view-menu-bar/div/button[${index + 1}]`))
+    return element(
+      by.xpath(
+        `/html/body/app-root/div/view-header/header/div/view-menu-bar/div/button[${
+          index + 1
+        }]`,
+      ),
+    );
   }
 
   getFooterMenuButton(index: number): ElementFinder {
-    return element(by.xpath(`/html/body/app-root/div/view-footer/footer/div/view-menu-bar/div/button[${index + 1}]`))
+    return element(
+      by.xpath(
+        `/html/body/app-root/div/view-footer/footer/div/view-menu-bar/div/button[${
+          index + 1
+        }]`,
+      ),
+    );
   }
 
   getSnsButton(index: number): ElementFinder {
-    return element(by.xpath(`/html/body/app-root/div/view-footer/footer/div/view-sns-bar/div/button[${index + 1}]`))
+    return element(
+      by.xpath(
+        `/html/body/app-root/div/view-footer/footer/div/view-sns-bar/div/button[${
+          index + 1
+        }]`,
+      ),
+    );
   }
 }

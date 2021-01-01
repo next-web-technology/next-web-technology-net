@@ -8,9 +8,8 @@ describe('ViewLinksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewLinksComponent ]
-    })
-    .compileComponents();
+      declarations: [ViewLinksComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

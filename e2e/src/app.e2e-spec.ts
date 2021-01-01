@@ -18,28 +18,30 @@ describe('workspace-project App', () => {
   MENUS.forEach((menu, index) => {
     it(`should move to path page when header menu button ${index} ${menu.name} ${menu.path} clicked`, async () => {
       await page.navigateTo();
-      const button = page.getHeaderMenuButton(index)
-      await button.click()
-      const expectedUrl = `${browser.baseUrl}${menu.path}`
+      const button = page.getHeaderMenuButton(index);
+      await button.click();
+      const expectedUrl = `${browser.baseUrl}${menu.path}`;
       expect(await browser.getCurrentUrl()).toEqual(expectedUrl);
     });
-  })
+  });
 
   MENUS.forEach((menu, index) => {
     it(`should move to path page when footer menu button ${index} ${menu.name} ${menu.path} clicked`, async () => {
       await page.navigateTo();
-      const button = page.getFooterMenuButton(index)
-      await button.click()
-      const expectedUrl = `${browser.baseUrl}${menu.path}`
+      const button = page.getFooterMenuButton(index);
+      await button.click();
+      const expectedUrl = `${browser.baseUrl}${menu.path}`;
       expect(await browser.getCurrentUrl()).toEqual(expectedUrl);
     });
-  })
+  });
 
   afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-    expect(logs).not.toContain(jasmine.objectContaining({
-      level: logging.Level.SEVERE,
-    } as logging.Entry));
+    expect(logs).not.toContain(
+      jasmine.objectContaining({
+        level: logging.Level.SEVERE,
+      } as logging.Entry),
+    );
   });
 });
