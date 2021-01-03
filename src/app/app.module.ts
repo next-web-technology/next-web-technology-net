@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
@@ -65,6 +66,7 @@ import { ViewContactComponent } from './view/contact/contact.component';
     MatButtonModule,
     MatCardModule,
     MatDividerModule,
+    MatListModule,
     FontAwesomeModule,
   ],
   providers: [],
