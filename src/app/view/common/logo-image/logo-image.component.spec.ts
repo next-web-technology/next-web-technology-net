@@ -25,9 +25,9 @@ describe('ViewLogoImageComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('img src should be matched to //assets/logo-transparent.png$/', () => {
+  it('img src should be matched to //assets/common/logo-image/logo-transparent.png$/', () => {
     expect(compiled.querySelector('img').src).toMatch(
-      /\/assets\/logo-transparent.png$/,
+      /\/assets\/common\/logo-image\/logo-transparent.png$/,
     );
   });
 
