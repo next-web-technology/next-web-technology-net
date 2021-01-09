@@ -28,6 +28,7 @@ import { TechnologyComponent } from './page/technology/technology.component';
 import { ViewTechnologyComponent } from './view/technology/technology.component';
 import { MembersComponent } from './page/members/members.component';
 import { ViewMembersComponent } from './view/members/members.component';
+import { ViewMemberComponent } from './view/members/member/member.component';
 import { LinksComponent } from './page/links/links.component';
 import { ViewLinksComponent } from './view/links/links.component';
 import { ContactComponent } from './page/contact/contact.component';
@@ -52,6 +53,7 @@ import { ViewContactComponent } from './view/contact/contact.component';
     ViewTechnologyComponent,
     MembersComponent,
     ViewMembersComponent,
+    ViewMemberComponent,
     LinksComponent,
     ViewLinksComponent,
     ContactComponent,

@@ -1,0 +1,18 @@
+<ng-container *ngIf="null"></ng-container>
+<ng-container *ngIf="undefined"></ng-container>
+<ng-container *ngIf="member">
+  <div fxLayout="row">
+    <div fxLayout="column">
+      <img mat-card-avatar src="../../../assets/members/{{member.photo}}">
+      <div>{{member.name}}</div>
+    </div>
+    <div fxLayout="column">
+      <ng-container *ngFor="let sns of member.snss">
+        <button mat-button (click)="goToLink(sns.url)">
+          <fa-icon [icon]="sns.icon"></fa-icon>
+          <span>{{sns.name}}</span>
+        </button>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>
