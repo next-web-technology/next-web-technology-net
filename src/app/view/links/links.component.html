@@ -1,1 +1,21 @@
-<p>view-links works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>リンク</mat-card-title>
+    <mat-card-subtitle>ノード・各種サービス等</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="../../../assets/links/links.png" alt="Next Web Technology's links image">
+  <mat-card-content>
+    <div fxLayout="column">
+      <ng-container *ngIf="links===null"></ng-container>
+      <ng-container *ngIf="links===undefined"></ng-container>
+      <ng-container *ngIf="links">
+        <ng-container *ngIf="links.length > 0; else noLinks">
+          <ng-container *ngFor="let link of links">
+            <view-link [link]="link"></view-link>
+          </ng-container>
+        </ng-container>
+        <ng-template #noLinks></ng-template>
+      </ng-container>
+    </div>
+  </mat-card-content>
+</mat-card>
