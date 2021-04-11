@@ -1,0 +1,17 @@
+<ng-container *ngIf="null"></ng-container>
+<ng-container *ngIf="undefined"></ng-container>
+<ng-container *ngIf="link">
+  <div fxLayout="row" fxLayoutAlign="space-around center">
+    <div fxLayout="column">
+      <img mat-card-avatar src="../../../assets/links/{{link.photo}}">
+    </div>
+    <div fxLayout="column">
+      {{link.name}}
+    </div>
+    <div fxLayout="column">
+      <button mat-button (click)="goToLink(link.url)">
+        <span>{{link.url}}</span>
+      </button>
+    </div>
+  </div>
+</ng-container>
