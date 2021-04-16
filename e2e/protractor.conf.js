@@ -13,6 +13,10 @@ exports.config = {
   capabilities: {
     browserName: 'chrome',
   },
+  chromeDriver:
+    process.platform === 'win32'
+      ? '../node_modules/webdriver-manager/selenium/chromedriver_89.0.4389.114.exe'
+      : '../node_modules/webdriver-manager/selenium/chromedriver_89.0.4389.114',
   directConnect: true,
   SELENIUM_PROMISE_MANAGER: false,
   baseUrl: 'http://localhost:4200/',
