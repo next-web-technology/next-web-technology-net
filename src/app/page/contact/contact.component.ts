@@ -1,52 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Inquiry, InquiryResponse } from '../../domain/inquiry/inquiry.model';
-import { InquiryService } from '../../domain/inquiry/inquiry.service';
-
+import { Inquiry } from '../../domain/inquiry/inquiry.model';
+import { InquiryApplicationService } from '../../domain/inquiry/inquiry.application.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
-  constructor(
-    private inquiryService: InquiryService,
-    private _snackBar: MatSnackBar,
-  ) {}
+  constructor(private inquiryApplicationService: InquiryApplicationService) {}
 
   ngOnInit(): void {}
 
   onSendInquiry(inquiry: Inquiry): void {
-    this.inquiryService
-      .send$(inquiry)
-      .subscribe((inquiryResponse: InquiryResponse) => {
-        if (inquiryResponse.status === 'success') {
-          this._snackBar.open('お問い合わせ内容を送信しました', '閉じる', {
-            duration: 5000,
-            horizontalPosition: 'center',
-            verticalPosition: 'top',
-          });
-        } else if (inquiryResponse.status === 'failure') {
-          this._snackBar.open(
-            'お問い合わせ内容の送信が拒否されました',
-            '閉じる',
-            {
-              duration: 5000,
-              horizontalPosition: 'center',
-              verticalPosition: 'top',
-            },
-          );
-        } else {
-          this._snackBar.open(
-            'お問い合わせ内容の送信で不明なエラーが発生しました',
-            '閉じる',
-            {
-              duration: 5000,
-              horizontalPosition: 'center',
-              verticalPosition: 'top',
-            },
-          );
-        }
-      });
+    this.inquiryApplicationService.send(inquiry);
   }
 }
