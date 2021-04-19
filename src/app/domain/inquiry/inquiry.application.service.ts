@@ -1,28 +1,28 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Inquiry, InquiryResponse } from '../../domain/inquiry/inquiry.model';
-import { InquiryService } from '../../domain/inquiry/inquiry.service';
+import { Contact, ContactResponse } from '../../domain/inquiry/inquiry.model';
+import { ContactService } from '../../domain/inquiry/inquiry.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class InquiryApplicationService {
+export class ContactApplicationService {
   constructor(
-    private inquiryService: InquiryService,
+    private contactService: ContactService,
     private _snackBar: MatSnackBar,
   ) {}
 
-  send(inquiry: Inquiry): void {
-    this.inquiryService
-      .send$(inquiry)
-      .subscribe((inquiryResponse: InquiryResponse) => {
-        if (inquiryResponse.status === 'success') {
+  send(contact: Contact): void {
+    this.contactService
+      .send$(contact)
+      .subscribe((contactResponse: ContactResponse) => {
+        if (contactResponse.status === 'success') {
           this._snackBar.open('お問い合わせ内容を送信しました', '閉じる', {
             duration: 5000,
             horizontalPosition: 'center',
             verticalPosition: 'top',
           });
-        } else if (inquiryResponse.status === 'failure') {
+        } else if (contactResponse.status === 'failure') {
           this._snackBar.open(
             'お問い合わせ内容の送信が拒否されました',
             '閉じる',

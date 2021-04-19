@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { InquiryInfrastructureService } from './inquiry.infrastructure.service';
+import { ContactInfrastructureService } from './inquiry.infrastructure.service';
 
-describe('InquiryInfrastructureService', () => {
-  let service: InquiryInfrastructureService;
+describe('ContactInfrastructureService', () => {
+  let service: ContactInfrastructureService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(InquiryInfrastructureService);
+    service = TestBed.inject(ContactInfrastructureService);
   });
 
   it('should be created', () => {

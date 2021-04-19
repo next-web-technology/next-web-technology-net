@@ -7,7 +7,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class ViewContactComponent implements OnInit {
   @Output()
-  appSendInquiry: EventEmitter<{
+  appSendContact: EventEmitter<{
     email: string;
     name: string;
     title: string;
@@ -15,12 +15,12 @@ export class ViewContactComponent implements OnInit {
   }>;
 
   constructor() {
-    this.appSendInquiry = new EventEmitter();
+    this.appSendContact = new EventEmitter();
   }
 
   ngOnInit(): void {}
 
   onSubmit(email: string, name: string, title: string, content: string): void {
-    this.appSendInquiry.emit({ email, name, title, content });
+    this.appSendContact.emit({ email, name, title, content });
   }
 }

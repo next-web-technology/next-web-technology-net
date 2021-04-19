@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Inquiry, InquiryResponse } from './inquiry.model';
-import { InterfaceInquiryInfrastructureService } from './inquiry.service';
+import { Contact, ContactResponse } from './inquiry.model';
+import { InterfaceContactInfrastructureService } from './inquiry.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class InquiryInfrastructureService
-  implements InterfaceInquiryInfrastructureService {
+export class ContactInfrastructureService
+  implements InterfaceContactInfrastructureService {
   constructor() {}
 
-  send$(inquiry: Inquiry): Observable<InquiryResponse> {
+  send$(contact: Contact): Observable<ContactResponse> {
     // Todo: This is dummy response. API request must be implemented.
     return of({ status: 'success' });
   }

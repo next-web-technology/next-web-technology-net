@@ -1,21 +1,21 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Inquiry, InquiryResponse } from './inquiry.model';
-import { InquiryInfrastructureService } from '../inquiry/inquiry.infrastructure.service';
+import { Contact, ContactResponse } from './inquiry.model';
+import { ContactInfrastructureService } from '../inquiry/inquiry.infrastructure.service';
 
-export interface InterfaceInquiryInfrastructureService {
-  send$(inquiry: Inquiry): Observable<InquiryResponse>;
+export interface InterfaceContactInfrastructureService {
+  send$(contact: Contact): Observable<ContactResponse>;
 }
 
 @Injectable({
   providedIn: 'root',
 })
-export class InquiryService {
+export class ContactService {
   constructor(
-    private inquiryInfrastractureService: InquiryInfrastructureService,
+    private contactInfrastractureService: ContactInfrastructureService,
   ) {}
 
-  send$(inquiry: Inquiry): Observable<InquiryResponse> {
-    return this.inquiryInfrastractureService.send$(inquiry);
+  send$(contact: Contact): Observable<ContactResponse> {
+    return this.contactInfrastractureService.send$(contact);
   }
 }

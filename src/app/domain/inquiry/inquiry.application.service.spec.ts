@@ -1,17 +1,17 @@
 import { TestBed } from '@angular/core/testing';
 
-import { InquiryApplicationService } from './inquiry.application.service';
+import { ContactApplicationService } from './inquiry.application.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-describe('InquiryApplicationService', () => {
-  let service: InquiryApplicationService;
+describe('ContactApplicationService', () => {
+  let service: ContactApplicationService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [InquiryApplicationService],
+      providers: [ContactApplicationService],
       imports: [MatSnackBarModule],
     });
-    service = TestBed.inject(InquiryApplicationService);
+    service = TestBed.inject(ContactApplicationService);
   });
 
   it('should be created', () => {
