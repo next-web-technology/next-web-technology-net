@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Contact } from '../../domain/inquiry/inquiry.model';
-import { ContactApplicationService } from '../../domain/inquiry/inquiry.application.service';
+import { Contact } from '../../domain/inquiry/contact.model';
+import { ContactApplicationService } from '../../domain/inquiry/contact.application.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',

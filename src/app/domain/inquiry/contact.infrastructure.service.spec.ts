@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ContactInfrastructureService } from './inquiry.infrastructure.service';
+import { ContactInfrastructureService } from './contact.infrastructure.service';
 
 describe('ContactInfrastructureService', () => {
   let service: ContactInfrastructureService;

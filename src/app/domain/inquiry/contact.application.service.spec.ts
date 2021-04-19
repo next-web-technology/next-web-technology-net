@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ContactApplicationService } from './inquiry.application.service';
+import { ContactApplicationService } from './contact.application.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 describe('ContactApplicationService', () => {

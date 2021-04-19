@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Contact, ContactResponse } from './inquiry.model';
-import { ContactInfrastructureService } from '../inquiry/inquiry.infrastructure.service';
+import { Contact, ContactResponse } from './contact.model';
+import { ContactInfrastructureService } from './contact.infrastructure.service';
 
 export interface InterfaceContactInfrastructureService {
   send$(contact: Contact): Observable<ContactResponse>;

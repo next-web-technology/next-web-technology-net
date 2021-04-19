@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Contact, ContactResponse } from '../../domain/inquiry/inquiry.model';
-import { ContactService } from '../../domain/inquiry/inquiry.service';
+import { Contact, ContactResponse } from './contact.model';
+import { ContactService } from './contact.service';
 
 @Injectable({
   providedIn: 'root',

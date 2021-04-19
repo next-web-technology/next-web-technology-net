@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { Contact, ContactResponse } from './inquiry.model';
-import { InterfaceContactInfrastructureService } from './inquiry.service';
+import { Contact, ContactResponse } from './contact.model';
+import { InterfaceContactInfrastructureService } from './contact.service';
 
 @Injectable({
   providedIn: 'root',
