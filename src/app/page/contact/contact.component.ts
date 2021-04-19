@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Inquiry } from '../../domain/inquiry/inquiry.model';
-import { InquiryApplicationService } from '../../domain/inquiry/inquiry.application.service';
+import { Contact } from '../../domain/contact/contact.model';
+import { ContactApplicationService } from '../../domain/contact/contact.application.service';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
-  constructor(private inquiryApplicationService: InquiryApplicationService) {}
+  constructor(private contactApplicationService: ContactApplicationService) {}
 
   ngOnInit(): void {}
 
-  onSendInquiry(inquiry: Inquiry): void {
-    this.inquiryApplicationService.send(inquiry);
+  onSendContact(contact: Contact): void {
+    this.contactApplicationService.send(contact);
   }
 }
