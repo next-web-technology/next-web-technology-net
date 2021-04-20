@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "pre:e2e": "./node_modules/.bin/webdriver-manager update --versions.chrome 89.0.4389.114",
