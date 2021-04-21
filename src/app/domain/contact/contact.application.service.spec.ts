@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { ContactApplicationService } from './contact.application.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('ContactApplicationService', () => {
   let service: ContactApplicationService;
@@ -9,7 +10,7 @@ describe('ContactApplicationService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [ContactApplicationService],
-      imports: [MatSnackBarModule],
+      imports: [MatSnackBarModule, HttpClientModule],
     });
     service = TestBed.inject(ContactApplicationService);
   });
