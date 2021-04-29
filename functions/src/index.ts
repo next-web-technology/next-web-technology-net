@@ -14,7 +14,7 @@ export const contact = functions
   .region('asia-northeast1')
   .https.onRequest((request, response) => {
     try {
-      functions.logger.info(JSON.stringify(request.body), {
+      functions.logger.info(request.body, {
         structureData: true,
       });
       response.set('Access-Control-Allow-Origin', '*');
