@@ -15,8 +15,8 @@ exports.config = {
   },
   chromeDriver:
     process.platform === 'win32'
-      ? '../node_modules/webdriver-manager/selenium/chromedriver_89.0.4389.114.exe'
-      : '../node_modules/webdriver-manager/selenium/chromedriver_89.0.4389.114',
+      ? '../node_modules/webdriver-manager/selenium/chromedriver_90.0.4430.24.exe'
+      : '../node_modules/webdriver-manager/selenium/chromedriver_90.0.4430.24',
   directConnect: true,
   SELENIUM_PROMISE_MANAGER: false,
   baseUrl: 'http://localhost:4200/',
