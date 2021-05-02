@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'view-contact',
@@ -6,6 +7,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./contact.component.css'],
 })
 export class ViewContactComponent implements OnInit {
+  recaptchaSiteKey: string = environment.recaptchaSiteKey;
+
   @Output()
   appSendContact: EventEmitter<{
     email: string;
