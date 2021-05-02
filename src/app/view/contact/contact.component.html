@@ -1,25 +1,80 @@
 <div fxLayout="column" fxLayoutAlign="center stretch">
   <h2>お問い合わせフォーム</h2>
-  <div>ご意見・ご要望・ご相談・ご依頼等ありましたら、以下問い合わせフォームよりお気軽にお問い合わせください。</div>
-  <form #formRef="ngForm" fxLayout="column" fxLayoutAlign="center stretch" (submit)="onSubmit(emailRef.value, nameRef.value, titleRef.value, contentRef.value)">
+  <div>
+    ご意見・ご要望・ご相談・ご依頼等ありましたら、以下問い合わせフォームよりお気軽にお問い合わせください。
+  </div>
+  <form
+    #formRef="ngForm"
+    fxLayout="column"
+    fxLayoutAlign="center stretch"
+    (submit)="
+      onSubmit(emailRef.value, nameRef.value, titleRef.value, contentRef.value)
+    "
+  >
     <div fxLayout="column" fxLayoutAlign="center stretch">
       <mat-form-field appearance="legacy">
         <mat-label>メールアドレス</mat-label>
-        <input matInput #emailRef required type="email" pattern=".+@.+\..+" ngModel name="email" placeholder="メールアドレスを入力"/>
+        <input
+          matInput
+          #emailRef
+          required
+          type="email"
+          pattern=".+@.+\..+"
+          ngModel
+          name="email"
+          placeholder="メールアドレスを入力"
+        />
       </mat-form-field>
       <mat-form-field>
         <mat-label>お名前</mat-label>
-        <input matInput #nameRef required type="name" pattern=".+" ngModel name="name" placeholder="お名前を入力"/>
+        <input
+          matInput
+          #nameRef
+          required
+          type="name"
+          pattern=".+"
+          ngModel
+          name="name"
+          placeholder="お名前を入力"
+        />
       </mat-form-field>
       <mat-form-field appearance="legacy">
         <mat-label>タイトル</mat-label>
-        <input matInput #titleRef required type="text" pattern=".+" ngModel name="title"  placeholder="問い合わせのタイトルを入力"/>
+        <input
+          matInput
+          #titleRef
+          required
+          type="text"
+          pattern=".+"
+          ngModel
+          name="title"
+          placeholder="問い合わせのタイトルを入力"
+        />
       </mat-form-field>
       <mat-form-field appearance="legacy">
         <mat-label>内容</mat-label>
-        <textarea matInput #contentRef required type="text" pattern=".+" ngModel name="content" placeholder="問い合わせの内容を入力" rows="5"></textarea>
+        <textarea
+          matInput
+          #contentRef
+          required
+          type="text"
+          pattern=".+"
+          ngModel
+          name="content"
+          placeholder="問い合わせの内容を入力"
+          rows="5"
+        ></textarea>
       </mat-form-field>
+      <re-captcha
+        #recaptchaRef
+        required
+        ngModel
+        name="recaptcha"
+        siteKey="{{ recaptchaSiteKey }}"
+      ></re-captcha>
     </div>
-    <button mat-flat-button color="primary" [disabled]="formRef.invalid">問い合わせ送信</button>
+    <button mat-flat-button color="primary" [disabled]="formRef.invalid">
+      問い合わせ送信
+    </button>
   </form>
 </div>

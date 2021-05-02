@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:5001/next-web-technology-net/asia-northeast1',
+  recaptchaSiteKey: '6Lc9q8IaAAAAAC5q0WxwQnPeT5LveNnzmeT4OBpa',
 };
 
 /*

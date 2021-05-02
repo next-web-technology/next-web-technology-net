@@ -13,6 +13,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -81,6 +82,8 @@ import { ViewContactComponent } from './view/contact/contact.component';
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
+    RecaptchaModule,
+    RecaptchaFormsModule,
     FontAwesomeModule,
   ],
   providers: [],
