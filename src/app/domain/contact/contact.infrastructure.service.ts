@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
 import { Contact, ContactResponse } from './contact.model';
@@ -32,6 +32,14 @@ export class ContactInfrastructureService
         contact,
         this.httpOptions,
       )
-      .pipe(map((contactApiResponse) => contactApiResponse.data));
+      .pipe(
+        map((contactApiResponse) => contactApiResponse.data),
+        catchError((error) => this.handleError(error)),
+      );
+  }
+
+  handleError(error: any): Observable<ContactResponse> {
+    console.error(error);
+    return of({ status: 'failure' });
   }
 }

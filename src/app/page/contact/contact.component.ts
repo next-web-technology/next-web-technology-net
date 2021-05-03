@@ -7,7 +7,17 @@ import { ContactApplicationService } from '../../domain/contact/contact.applicat
   styleUrls: ['./contact.component.css'],
 })
 export class ContactComponent implements OnInit {
-  constructor(private contactApplicationService: ContactApplicationService) {}
+  email?: string;
+  name?: string;
+  title?: string;
+  content?: string;
+
+  constructor(private contactApplicationService: ContactApplicationService) {
+    this.email = '';
+    this.name = '';
+    this.title = '';
+    this.content = '';
+  }
 
   ngOnInit(): void {}
 

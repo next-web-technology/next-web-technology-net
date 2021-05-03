@@ -3,6 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ViewContactComponent } from './contact.component';
 
 import { FormsModule } from '@angular/forms';
+import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 
 describe('ViewContactComponent', () => {
   let component: ViewContactComponent;
@@ -11,7 +12,7 @@ describe('ViewContactComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ViewContactComponent],
-      imports: [FormsModule],
+      imports: [FormsModule, RecaptchaModule, RecaptchaFormsModule],
     }).compileComponents();
   });
 
