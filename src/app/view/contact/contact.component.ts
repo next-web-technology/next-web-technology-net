@@ -1,4 +1,5 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { environment } from '../../../environments/environment';
 
 @Component({
@@ -8,6 +9,11 @@ import { environment } from '../../../environments/environment';
 })
 export class ViewContactComponent implements OnInit {
   recaptchaSiteKey: string = environment.recaptchaSiteKey;
+
+  @Input() email?: string;
+  @Input() name?: string;
+  @Input() title?: string;
+  @Input() content?: string;
 
   @Output()
   appSendContact: EventEmitter<{
@@ -23,7 +29,14 @@ export class ViewContactComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  onSubmit(email: string, name: string, title: string, content: string): void {
+  onSubmit(
+    email: string,
+    name: string,
+    title: string,
+    content: string,
+    formRef: NgForm,
+  ): void {
     this.appSendContact.emit({ email, name, title, content });
+    formRef.resetForm();
   }
 }

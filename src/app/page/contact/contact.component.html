@@ -1,1 +1,7 @@
-<view-contact (appSendContact)="onSendContact($event)"></view-contact>
+<view-contact
+  [email]="email"
+  [name]="name"
+  [title]="title"
+  [content]="content"
+  (appSendContact)="onSendContact($event)"
+></view-contact>
