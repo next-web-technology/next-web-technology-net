@@ -1,10 +1,11 @@
 # NextWebTechnologyNet
 
-[![Angular CI](https://github.com/next-web-technology/next-web-technology-net/workflows/Angular%20CI/badge.svg)](https://github.com/next-web-technology/next-web-technology-net/actions?query=workflow%3A%22Angular+CI%22)
-[![Functions CI](https://github.com/next-web-technology/next-web-technology-net/workflows/Functions%20CI/badge.svg)](https://github.com/next-web-technology/next-web-technology-net/actions?query=workflow%3A%22Functions+CI%22)
-[![Firebase CD](https://github.com/next-web-technology/next-web-technology-net/workflows/Firebase%20CD/badge.svg)](https://github.com/next-web-technology/next-web-technology-net/actions?query=workflow%3A%22Firebase+CD%22)
+[![CI Angular](https://github.com/next-web-technology/next-web-technology-net/workflows/CI%20Angular/badge.svg)](https://github.com/next-web-technology/next-web-technology-net/actions?query=workflow%3A%22CI+Angular%22)
+[![CI Firebase Functions](https://github.com/next-web-technology/next-web-technology-net/workflows/CI%20Firebase%20Functions/badge.svg)](https://github.com/next-web-technology/next-web-technology-net/actions?query=workflow%3A%22CI+Firebase+Functions%22)
+[![CD Firebase](https://github.com/next-web-technology/next-web-technology-net/workflows/CD%20Firebase/badge.svg)](https://github.com/next-web-technology/next-web-technology-net/actions?query=workflow%3A%22CD+Firebase%22)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.5.
+Now, this project was updated to version 13.0.2.
 
 ## Development server
 
@@ -25,6 +26,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+But, this feature is deprecated on Angular 13.
 
 ## Further help
 
