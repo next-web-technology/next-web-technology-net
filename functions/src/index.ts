@@ -30,6 +30,7 @@ export const contact = functions
           'Origin, X-Requested-With, Content-Type, Accept',
         );
         response.json({ data: { status: 'success' } });
+        return;
       }
       const slackMessageText =
         `email: ${request.body.email}\n` +
