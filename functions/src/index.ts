@@ -18,11 +18,25 @@ export const contact = functions
       functions.logger.info(request.body, {
         structureData: true,
       });
+      if (request.method === 'OPTIONS') {
+        functions.logger.info('OPTIONS method was requested');
+        response.set('Access-Control-Allow-Origin', '*');
+        response.set(
+          'Access-Control-Allow-Methods',
+          'GET, HEAD, OPTIONS, POST',
+        );
+        response.set(
+          'Access-Control-Allow-Headers',
+          'Origin, X-Requested-With, Content-Type, Accept',
+        );
+        response.json({ data: { status: 'success' } });
+      }
       const slackMessageText =
         `email: ${request.body.email}\n` +
         `name: ${request.body.name}\n` +
-        `title: ${request.body.content}\n` +
+        `title: ${request.body.title}\n` +
         `content: ${request.body.content}`;
+      functions.logger.info(slackMessageText);
       const postSlackMessageResult = await postSlackMessage(
         functions.config().slack.url,
         slackMessageText,
