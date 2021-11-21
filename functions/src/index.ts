@@ -36,7 +36,7 @@ export const contact = functions
         `email: ${request.body.email}\n` +
         `name: ${request.body.name}\n` +
         `title: ${request.body.title}\n` +
-        `content: ${request.body.content}`;
+        `content: \n${request.body.content}`;
       functions.logger.info(slackMessageText);
       const postSlackMessageResult = await postSlackMessage(
         functions.config().slack.url,
