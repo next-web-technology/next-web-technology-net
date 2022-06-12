@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  cache-version: v3
+  cache-version: v4
 
 jobs:
   deploy:
@@ -46,7 +46,7 @@ jobs:
 
       - run: npm run build --if-present
 
-      - if: ${{ steps.node_modules_cache_id.outputs.cache-hit != 'true' }}
+      - if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
         run: npm install
         working-directory: ./functions
       - run: npm ls --depth=0
