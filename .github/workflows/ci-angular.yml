@@ -30,7 +30,9 @@ jobs:
           path: ${{ steps.npm-cache-dir.outputs.dir }}
           key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
+            ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
             ${{ runner.os }}-node-${{ matrix.node-version }}-
+            ${{ runner.os }}-
 
       - run: echo '${{ toJSON(steps.npm-cache.outputs) }}'
 
