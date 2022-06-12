@@ -2,6 +2,9 @@ name: CI Firebase Functions
 
 on: [pull_request]
 
+env:
+  cache-version: v4
+
 jobs:
   build:
 
@@ -29,9 +32,9 @@ jobs:
           cache-name: cache-node-modules
         with:
           path: ${{ steps.npm-cache-dir.outputs.dir }}
-          key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ env.cache-version }}-${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
-            ${{ runner.os }}-node-${{ matrix.node-version }}-
+            ${{ env.cache-version }}-${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
 
       - run: echo '${{ toJSON(steps.npm-cache.outputs) }}'
 
@@ -46,6 +49,7 @@ jobs:
   notify:
     runs-on: ubuntu-latest
 
+    if: always()
     needs: [build]
 
     steps:
