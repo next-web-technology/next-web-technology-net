@@ -6,7 +6,7 @@ on:
       - main
 
 env:
-  cache-version: v2
+  cache-version: v3
 
 jobs:
   deploy:
@@ -37,8 +37,6 @@ jobs:
           key: ${{ env.cache-version }}-${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ env.cache-version }}-${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
-            ${{ env.cache-version }}-${{ runner.os }}-node-${{ matrix.node-version }}-
-            ${{ env.cache-version }}-${{ runner.os }}-
 
       - run: echo '${{ toJSON(steps.npm-cache.outputs) }}'
 

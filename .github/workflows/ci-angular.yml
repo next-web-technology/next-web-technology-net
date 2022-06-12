@@ -11,7 +11,7 @@ jobs:
         node-version: [16.x]
 
     env:
-      cache-version: v1
+      cache-version: v3
 
     steps:
       - uses: actions/checkout@v3
@@ -34,8 +34,6 @@ jobs:
           key: ${{ env.cache-version }}-${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ env.cache-version }}-${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
-            ${{ env.cache-version }}-${{ runner.os }}-node-${{ matrix.node-version }}-
-            ${{ env.cache-version }}-${{ runner.os }}-
 
       - run: echo '${{ toJSON(steps.npm-cache.outputs) }}'
 
