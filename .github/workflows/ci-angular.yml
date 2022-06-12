@@ -6,7 +6,7 @@ env:
   SLACK_USERNAME: GitHubActionsResultNotificationBot
   SLACK_CHANNEL: next-web-technology-net
 jobs:
-  build:
+  ci-angular:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

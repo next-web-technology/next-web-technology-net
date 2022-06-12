@@ -8,7 +8,7 @@ env:
   SLACK_USERNAME: GitHubActionsResultNotificationBot
   SLACK_CHANNEL: next-web-technology-net
 jobs:
-  deploy:
+  cd-firebase:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
