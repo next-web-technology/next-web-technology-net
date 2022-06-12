@@ -10,6 +10,9 @@ jobs:
       matrix:
         node-version: [16.x]
 
+    env:
+      cache-version: v1
+
     steps:
       - uses: actions/checkout@v3
 
@@ -28,7 +31,7 @@ jobs:
           cache-name: cache-node-modules
         with:
           path: ${{ steps.npm-cache-dir.outputs.dir }}
-          key: ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ env.cache-version }}-${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
             ${{ runner.os }}-node-${{ matrix.node-version }}-
