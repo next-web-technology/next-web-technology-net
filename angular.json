@@ -106,5 +106,7 @@
       }
     }
   },
-  "defaultProject": "next-web-technology-net"
+  "cli": {
+    "analytics": false
+  }
 }
