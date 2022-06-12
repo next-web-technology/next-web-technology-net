@@ -1,112 +1,31 @@
 name: CI Angular
-
 on: [pull_request]
-
+env:
+  CI: true
+  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+  SLACK_USERNAME: GitHubActionsResultNotificationBot
+  SLACK_CHANNEL: next-web-technology-net
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-
-    env:
-      cache-version: v4
-
     steps:
       - uses: actions/checkout@v3
-
       - uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Get npm cache directory
-        id: npm-cache-dir
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
-
-      - uses: actions/cache@v3
-        id: npm-cache
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ${{ steps.npm-cache-dir.outputs.dir }}
-          key: ${{ env.cache-version }}-${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ env.cache-version }}-${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
-
-      - run: echo '${{ toJSON(steps.npm-cache.outputs) }}'
-
-      - if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm install --force
+          node-version: 16
+      - run: npm ci --force
       - run: npm ls --depth=0
       - run: npm run build --if-present
-        env:
-          CI: true
-
-  test:
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Get npm cache directory
-        id: npm-cache-dir
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
-
-      - uses: actions/cache@v3
-        id: npm-cache
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ${{ steps.npm-cache-dir.outputs.dir }}
-          key: ${{ env.cache-version }}-${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ env.cache-version }}-${{ runner.os }}-node-${{ matrix.node-version }}-
-
-      - run: echo '${{ toJSON(steps.npm-cache.outputs) }}'
-
-      - if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm install --force
-      - run: npm ls --depth=0
       - run: npm run test -- --watch=false --browsers=ChromeHeadless
-        env:
-          CI: true
-
-  notify:
-    runs-on: ubuntu-latest
-
-    if: always()
-    needs: [build, test]
-
-    steps:
-      - uses: actions/checkout@v3
-
       - name: Slack Notification on Success
         if: ${{ success() }}
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_USERNAME: GitHubActionsResultNotificationBot
-          SLACK_CHANNEL: next-web-technology-net
           SLACK_TITLE: CI Success
           SLACK_COLOR: good
-
       - name: Slack Notification on Failure
         if: ${{ failure() }}
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_USERNAME: GitHubActionsResultNotificationBot
-          SLACK_CHANNEL: next-web-technology-net
           SLACK_TITLE: CI Failure
           SLACK_COLOR: danger

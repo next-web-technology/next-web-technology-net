@@ -1,87 +1,34 @@
 name: CD Firebase
-
 on:
   push:
     branches:
       - main
-
 env:
-  cache-version: v4
-
+  SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+  SLACK_USERNAME: GitHubActionsResultNotificationBot
+  SLACK_CHANNEL: next-web-technology-net
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-
     steps:
       - uses: actions/checkout@v3
-
       - uses: actions/setup-node@v3
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Get npm cache directory
-        id: npm-cache-dir
-        run: |
-          echo "::set-output name=dir::$(npm config get cache)"
-
-      - uses: actions/cache@v3
-        id: npm-cache
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ${{ steps.npm-cache-dir.outputs.dir }}
-          key: ${{ env.cache-version }}-${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ env.cache-version }}-${{ runner.os }}-node-${{ matrix.node-version }}-${{ hashFiles('**/package-lock.json') }}
-
-      - run: echo '${{ toJSON(steps.npm-cache.outputs) }}'
-
-      - if: steps.npm-cache.outputs.cache-hit != 'true'
-        run: npm install --force
-      - run: npm ls --depth=0
-
+      - run: npm ci --force
       - run: npm run build --if-present
-
-      - if: ${{ steps.npm-cache.outputs.cache-hit != 'true' }}
-        run: npm install
+      - run: npm install
         working-directory: ./functions
-      - run: npm ls --depth=0
-        working-directory: ./functions
-
       - run: npm run build
         working-directory: ./functions
-
       - run: npx firebase deploy --project=default --token=${{ secrets.FIREBASE_TOKEN }}
-
-  notify:
-    runs-on: ubuntu-latest
-
-    if: always()
-    needs: [deploy]
-
-    steps:
-      - uses: actions/checkout@v3
-
       - name: Slack Notification on Success
         if: ${{ success() }}
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_USERNAME: GitHubActionsResultNotificationBot
-          SLACK_CHANNEL: next-web-technology-net
           SLACK_TITLE: Deploy Success
           SLACK_COLOR: good
-
       - name: Slack Notification on Failure
         if: ${{ failure() }}
         uses: rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-          SLACK_USERNAME: GitHubActionsResultNotificationBot
-          SLACK_CHANNEL: next-web-technology-net
           SLACK_TITLE: Deploy Failure
           SLACK_COLOR: danger
